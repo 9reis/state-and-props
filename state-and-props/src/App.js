@@ -1,10 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from "react";
 
 function App() {
+  const [username, setUsername] = useState("");
+  const handleInput = ev => {
+    setUsername(ev.target.value);
+  }
+
   return (
-    <div className="App">
-    </div>
+    <>
+      <h1>State and Props</h1>
+      <label htmlFor="username">Enter your name here: </label>
+      <input type="text" id='username' placeholder='My wonderful name'
+        onChange={handleInput}
+      />
+      <p> Hi there, {username} </p>
+      <p>{username}, you are doing great today</p>
+    </>
   );
 }
 
